@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0b0b0b;
+  --foreground: #f5f3f3;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-ink: #0b0b0b;
+  --color-burgundy: #7a1e3a;
+  --color-wine: #5a162b;
+  --color-blush: #a83252;
+  --color-soft: #f5f3f3;
+  --color-muted: #a7a1a3;
+  --font-sans: var(--font-outfit);
+  --font-display: var(--font-syne);
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--color-ink);
+  color: var(--color-soft);
+  font-family: var(--font-sans), sans-serif;
+}
+
+body::before {
+  content: "";
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  opacity: 0.045;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+body::after {
+  content: "";
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(900px 500px at 80% -10%, rgba(168, 50, 82, 0.28), transparent 55%),
+    radial-gradient(700px 420px at 0% 20%, rgba(90, 22, 43, 0.35), transparent 50%),
+    #0b0b0b;
+}
+
+a {
+  color: inherit;
+}
